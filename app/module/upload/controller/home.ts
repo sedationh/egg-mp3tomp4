@@ -2,18 +2,19 @@ import { EggLogger } from 'egg';
 import { Inject, HTTPController, HTTPMethod, HTTPMethodEnum } from '@eggjs/tegg';
 
 @HTTPController({
-  path: '/',
+  path: '/api',
 })
 export class HomeController {
   @Inject()
   logger: EggLogger;
 
   @HTTPMethod({
-    method: HTTPMethodEnum.GET,
-    path: '/',
+    method: HTTPMethodEnum.POST,
+    path: '/upload',
   })
-  async index() {
-    this.logger.info('hello egg logger');
-    return 'hello egg';
+  async upload() {
+    this.logger.info('upload request');
+
+    return 'hello egg1';
   }
 }
