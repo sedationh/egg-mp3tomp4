@@ -7,6 +7,9 @@ export default (appInfo: EggAppInfo) => {
         supportedRequests: [{ path: /.*/, methods: [] }],
       },
     },
+    multipart: {
+      mode: 'file',
+    },
   } as PowerPartial<EggAppConfig>;
 
   // override config from framework / plugin
